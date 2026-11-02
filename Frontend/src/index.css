@@ -1,0 +1,40 @@
+:root {
+  --bg: #f5f6f8; --surface: #fff; --ink: #16181d; --muted: #6b7280;
+  --line: #e2e5ea; --accent: #2f5bea; --accent-ink: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #101216; --surface: #1a1d23; --ink: #eceef2; --muted: #9aa1ad;
+          --line: #2b2f37; --accent: #7b9bff; --accent-ink: #0d1020; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.wrap { max-width: 520px; margin: 0 auto; padding: 0 16px 48px; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+.logo { font-weight: 600; font-size: 20px; }
+nav { display: flex; gap: 4px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 999px; padding: 3px; }
+nav a { padding: 6px 16px; border-radius: 999px; color: var(--muted); text-decoration: none; }
+nav a.active { background: var(--ink); color: var(--bg); }
+.drop { display: flex; align-items: center; justify-content: center; min-height: 240px;
+  border: 1.5px dashed var(--line); border-radius: 12px; background: var(--surface);
+  color: var(--muted); cursor: pointer; overflow: hidden; }
+.drop.has { border-style: solid; }
+.drop img { display: block; width: 100%; max-height: 420px; object-fit: cover; }
+textarea { width: 100%; margin-top: 12px; padding: 12px; min-height: 84px; resize: vertical;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--surface);
+  color: var(--ink); font: inherit; }
+.btn { margin-top: 12px; padding: 10px 20px; border: 0; border-radius: 10px;
+  background: var(--accent); color: var(--accent-ink); font: inherit; font-weight: 600; cursor: pointer; }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.err { color: #c2362b; font-size: 14px; }
+.post { margin: 0 0 20px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 12px; overflow: hidden; }
+.post img { display: block; width: 100%; height: auto; }
+.post figcaption { padding: 12px 14px 14px; }
+.post p { margin: 0 0 6px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 13px; }
+.link { background: none; border: 0; color: var(--muted); font: inherit; font-size: 13px;
+  cursor: pointer; padding: 0; text-decoration: underline; }
+.empty { text-align: center; color: var(--muted); padding: 56px 0; }
+.empty a { color: var(--accent); }
